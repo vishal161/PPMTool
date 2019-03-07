@@ -9,8 +9,10 @@ class Dashboard extends Component {
   componentDidMount() {
     this.props.getProjects();
   }
+
   render() {
     const { projects } = this.props.project;
+
     return (
       <div className="projects">
         <div className="container">
@@ -19,6 +21,7 @@ class Dashboard extends Component {
               <h1 className="display-4 text-center">Projects</h1>
               <br />
               <CreateProjectButton />
+
               <br />
               <hr />
               {projects.map(project => (

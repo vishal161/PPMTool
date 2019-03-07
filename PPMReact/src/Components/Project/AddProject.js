@@ -27,6 +27,7 @@ class AddProject extends Component {
       this.setState({ errors: nextProps.errors });
     }
   }
+
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -40,16 +41,14 @@ class AddProject extends Component {
       start_date: this.state.start_date,
       end_date: this.state.end_date
     };
-
     this.props.createProject(newProject, this.props.history);
   }
+
   render() {
     const { errors } = this.state;
 
     return (
       <div>
-        <h1>Add Project Form</h1>
-
         <div className="project">
           <div className="container">
             <div className="row">
@@ -91,7 +90,6 @@ class AddProject extends Component {
                       </div>
                     )}
                   </div>
-
                   <div className="form-group">
                     <textarea
                       className={classnames("form-control form-control-lg", {
@@ -117,11 +115,6 @@ class AddProject extends Component {
                       value={this.state.start_date}
                       onChange={this.onChange}
                     />
-                    {errors.start_date && (
-                      <div className="invalid-feedback">
-                        {errors.start_date}
-                      </div>
-                    )}
                   </div>
                   <h6>Estimated End Date</h6>
                   <div className="form-group">
@@ -132,9 +125,6 @@ class AddProject extends Component {
                       value={this.state.end_date}
                       onChange={this.onChange}
                     />
-                    {errors.end_date && (
-                      <div className="invalid-feedback">{errors.end_date}</div>
-                    )}
                   </div>
 
                   <input
